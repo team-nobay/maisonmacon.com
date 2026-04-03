@@ -3,48 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maison Maçon — Brand Identity</title>
+<meta name="description" content="Maison Maçon — European antiques sourced from châteaux, delivered worldwide. Curated furniture, mirrors, bronze, and objets d'art.">
+<meta property="og:title" content="Maison Maçon">
+<meta property="og:description" content="European antiques sourced from châteaux, delivered worldwide.">
+<meta property="og:type" content="website">
+<title>Maison Maçon</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@100;200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@100;200;300;400&display=swap" rel="stylesheet">
 <style>
 
-/* ══════════════════════════════════════════════════
-   MAISON MAÇON — BRAND IDENTITY SYSTEM
-   Château Classique + Blood Red Edition
-   ══════════════════════════════════════════════════ */
-
+/* ── TOKENS ── */
 :root {
-  /* ── Primary ── */
-  --cream:    #F7F2EA;
-  --cream2:   #EFE8D8;
-  --cream3:   #E5DCC8;
-
-  /* ── Neutrals ── */
-  --line:     #D0C4AE;
-  --stone:    #A09080;
-  --mid:      #6E6050;
-  --ink:      #201C14;
-
-  /* ── Signature ── */
-  --red:      #5C1A14;     /* blood red — the brand's heartbeat */
-  --red-l:    #7A2A22;     /* lighter variant for hovers / accents */
-  --red-d:    #3E110E;     /* deep variant for backgrounds */
-
-  /* ── Accents ── */
-  --gold:     #8C7248;
-  --goldl:    #A88E60;
-  --forest:   #1A2A1C;
-
-  /* ── Type ── */
+  --cream:  #F7F2EA;
+  --cream2: #EFE8D8;
+  --cream3: #E5DCC8;
+  --line:   #D0C4AE;
+  --stone:  #A09080;
+  --mid:    #6E6050;
+  --ink:    #201C14;
+  --forest: #1A2A1C;
+  --gold:   #8C7248;
+  --goldl:  #A88E60;
+  --red:    #5C1A14;
   --ds: 'Cormorant Garamond', Georgia, serif;
   --sn: 'Jost', 'Helvetica Neue', sans-serif;
 }
 
-/* The cedilla — a quiet red accent on the ç */
-.cedilla {
-  color: var(--red);
-}
-
+/* ── RESET ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -56,958 +41,799 @@ body {
   overflow-x: hidden;
 }
 
-/* ── UTILITIES ── */
-.brand-section {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-}
+a { color: inherit; text-decoration: none; }
 
-.section-h {
-  font-size: 0.46rem;
-  letter-spacing: 0.45em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin: 5rem 0 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.section-h::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, var(--gold), transparent);
-  opacity: 0.2;
-}
-
-.section-note {
-  font-family: var(--ds);
-  font-size: 0.9rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--mid);
-  line-height: 1.9;
-  margin-bottom: 2rem;
-  max-width: 55ch;
-}
-
-/* ══════════════════════════════════════════════════
-   I. COVER
-   ══════════════════════════════════════════════════ */
-.cover {
-  min-height: 100vh;
-  background: var(--ink);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4rem 2rem;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Atmospheric gradients */
-.cover::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 50% 40% at 30% 80%, rgba(92,26,20,0.18) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 50% at 75% 20%, rgba(26,42,28,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(92,26,20,0.08) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-/* Estate-survey frame */
-.cov-frame {
-  position: absolute;
-  top: 2rem; left: 2rem; right: 2rem; bottom: 2rem;
-  border: 1px solid rgba(92,26,20,0.2);
-  pointer-events: none;
-}
-.cov-frame::before {
-  content: '';
-  position: absolute;
-  inset: 10px;
-  border: 1px solid rgba(140,114,72,0.08);
-}
-
-/* Corner accents — now in blood red */
-.corner {
-  position: absolute;
-  width: 20px; height: 20px;
-  border-color: rgba(92,26,20,0.45);
-  border-style: solid;
-}
-.corner.tl { top:-1px; left:-1px; border-width:1px 0 0 1px; }
-.corner.tr { top:-1px; right:-1px; border-width:1px 1px 0 0; }
-.corner.bl { bottom:-1px; left:-1px; border-width:0 0 1px 1px; }
-.corner.br { bottom:-1px; right:-1px; border-width:0 1px 1px 0; }
-
-.cov-over {
-  position: relative;
-  z-index: 2;
-  font-size: 0.46rem;
-  letter-spacing: 0.55em;
-  text-transform: uppercase;
-  color: rgba(92,26,20,0.5);
-  margin-bottom: 3rem;
-}
-
-.cov-maison {
-  position: relative;
-  z-index: 2;
-  font-family: var(--ds);
-  font-size: clamp(0.85rem, 2vw, 1.3rem);
-  font-weight: 300;
-  letter-spacing: 0.7em;
-  text-transform: uppercase;
-  color: rgba(247,242,234,0.3);
-  display: block;
-  margin-bottom: 0.1em;
-}
-
-.cov-macon {
-  position: relative;
-  z-index: 2;
-  font-family: var(--ds);
-  font-size: clamp(5.5rem, 16vw, 14rem);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 0.82;
-  letter-spacing: -0.02em;
-  color: var(--cream);
-}
-
-/* Blood red rule — the brand's signature mark */
-.cov-red-rule {
-  position: relative;
-  z-index: 2;
-  width: 2px;
-  height: 64px;
-  background: linear-gradient(to bottom, transparent, var(--red), transparent);
-  margin: 2.5rem auto;
-}
-
-.cov-sub {
-  position: relative;
-  z-index: 2;
-  font-size: 0.52rem;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: rgba(160,144,128,0.45);
-  line-height: 2.5;
-}
-
-.cov-foot {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 44px;
-  border-top: 1px solid rgba(92,26,20,0.15);
+/* ── NAV ── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2.5rem;
-  z-index: 2;
+  background: rgba(247,242,234,0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(208,196,174,0.4);
+  transition: background 0.3s;
 }
-.cov-foot span {
-  font-size: 0.42rem;
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nav-mm {
+  font-family: var(--ds);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: var(--ink);
+}
+
+.nav-wordmark {
+  font-family: var(--ds);
+  font-size: 0.72rem;
+  font-weight: 300;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(140,114,72,0.22);
+  color: var(--ink);
 }
 
-/* ══════════════════════════════════════════════════
-   II. WORDMARK SYSTEM
-   ══════════════════════════════════════════════════ */
-.wm-hero {
+.nav-links {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  margin: 2rem 0 0;
+  gap: 2rem;
+  align-items: center;
 }
 
-.wm-small {
-  font-family: var(--ds);
-  font-size: clamp(0.85rem, 2vw, 1.6rem);
+.nav-links a {
+  font-size: 0.52rem;
   font-weight: 300;
-  letter-spacing: 0.65em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--stone);
-  line-height: 1;
-  margin-bottom: 0.1em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+.nav-cta {
+  font-size: 0.48rem !important;
+  letter-spacing: 0.22em !important;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--gold);
+  color: var(--gold) !important;
+  transition: all 0.25s;
+}
+.nav-cta:hover {
+  background: var(--gold);
+  color: var(--cream) !important;
 }
 
-.wm-large {
+/* Red accent rule in nav */
+.nav-rule { width:1px; height:16px; background:var(--red); opacity:0.35; }
+
+/* Mobile nav toggle */
+.nav-toggle { display: none; cursor: pointer; }
+.nav-toggle span {
+  display: block;
+  width: 20px; height: 1px;
+  background: var(--ink);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  position: relative;
+}
+
+.hero-logo {
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: rise 1s ease 0.2s forwards;
+}
+
+.hero-mm {
   font-family: var(--ds);
-  font-size: clamp(5rem, 14vw, 11rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--ink);
+  display: block;
+}
+
+.hero-overline {
+  font-family: var(--ds);
+  font-size: clamp(0.7rem, 1.5vw, 0.95rem);
+  font-weight: 300;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: rise 1s ease 0.4s forwards;
+}
+
+.hero-title {
+  font-family: var(--ds);
+  font-size: clamp(4.5rem, 14vw, 12rem);
   font-weight: 300;
   font-style: italic;
   line-height: 0.85;
   letter-spacing: -0.02em;
   color: var(--ink);
+  opacity: 0;
+  animation: rise 1s ease 0.5s forwards;
 }
 
-/* Annotation row — red accented */
-.wm-meta {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--line);
-  margin-top: 2.5rem;
-}
-
-.wm-meta-item {
-  padding: 1.2rem 0;
-  border-right: 1px solid var(--line);
-  padding-right: 1.5rem;
-}
-.wm-meta-item:first-child { padding-left: 0; }
-.wm-meta-item:last-child { border-right: none; padding-left: 1.5rem; }
-.wm-meta-item:not(:first-child):not(:last-child) { padding-left: 1.5rem; }
-
-.wm-meta-l {
-  font-size: 0.42rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--red);
-  display: block;
-  margin-bottom: 0.3rem;
-}
-
-.wm-meta-v {
-  font-family: var(--ds);
-  font-size: 0.82rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--ink);
-}
-
-/* ══════════════════════════════════════════════════
-   III. LOGO GRID — 8 variations
-   ══════════════════════════════════════════════════ */
-.logo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-  margin: 2rem 0;
-}
-
-.logo-cell {
-  padding: 2.5rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-}
-
-.lc-over {
-  font-family: var(--ds);
-  font-size: 0.5rem;
-  font-weight: 300;
-  letter-spacing: 0.6em;
-  text-transform: uppercase;
-  color: var(--stone);
-}
-
-.lc-main {
-  font-family: var(--ds);
-  font-size: 2.2rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--ink);
-  line-height: 0.85;
-}
-
-.lc-rule {
-  width: 1px;
-  height: 16px;
-  background: var(--red);
-  opacity: 0.6;
-  margin: 0.2rem 0;
-}
-
-/* Variants */
-.logo-cell.on-cream { background: var(--cream); }
-.logo-cell.on-cream2 { background: var(--cream2); }
-
-.logo-cell.on-ink { background: var(--ink); }
-.logo-cell.on-ink .lc-over { color: rgba(247,242,234,0.3); }
-.logo-cell.on-ink .lc-main { color: var(--cream); }
-
-.logo-cell.on-forest { background: var(--forest); }
-.logo-cell.on-forest .lc-over { color: rgba(168,142,96,0.45); }
-.logo-cell.on-forest .lc-main { color: var(--cream); }
-
-.logo-cell.on-red { background: var(--red); }
-.logo-cell.on-red .lc-over { color: rgba(247,242,234,0.35); }
-.logo-cell.on-red .lc-main { color: var(--cream); }
-.logo-cell.on-red .lc-rule { background: var(--goldl); }
-
-.logo-cell.on-red-d { background: var(--red-d); }
-.logo-cell.on-red-d .lc-over { color: rgba(168,142,96,0.4); }
-.logo-cell.on-red-d .lc-main { color: var(--cream); }
-
-.logo-cell.on-gold { background: var(--gold); }
-.logo-cell.on-gold .lc-over { color: rgba(247,242,234,0.45); }
-.logo-cell.on-gold .lc-main { color: var(--cream); }
-.logo-cell.on-gold .lc-rule { background: var(--cream); opacity: 0.3; }
-
-.logo-cell.on-cream3 { background: var(--cream3); }
-
-/* ══════════════════════════════════════════════════
-   IV. COLOUR PALETTE
-   ══════════════════════════════════════════════════ */
-.palette-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  margin: 2rem 0;
-}
-
-.pal-card {
-  aspect-ratio: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1rem;
-  position: relative;
-}
-
-.pal-name {
-  font-size: 0.44rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  opacity: 0.7;
-  margin-bottom: 0.2rem;
-}
-
-.pal-hex {
-  font-family: var(--ds);
-  font-size: 0.85rem;
-  font-style: italic;
-}
-
-/* Large featured swatches for signature colours */
-.palette-sig {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 0;
-  margin: 0 0 2rem;
-}
-
-.pal-sig {
-  padding: 3rem 1.5rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.pal-sig-name {
-  font-family: var(--ds);
-  font-size: 1.2rem;
-  font-style: italic;
-  font-weight: 300;
-  margin-bottom: 0.3rem;
-}
-
-.pal-sig-hex {
-  font-size: 0.44rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  opacity: 0.6;
-}
-
-.pal-sig-role {
-  font-size: 0.42rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  opacity: 0.5;
-  margin-top: 0.8rem;
-}
-
-/* ══════════════════════════════════════════════════
-   V. TYPOGRAPHY
-   ══════════════════════════════════════════════════ */
-.type-specimen {
-  margin: 2rem 0;
-  padding: 3rem;
-  border: 1px solid var(--line);
-  position: relative;
-}
-
-.type-specimen::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 3px;
-  height: 100%;
-  background: var(--red);
-}
-
-.type-label {
-  font-size: 0.42rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.type-hero {
-  font-family: var(--ds);
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.15;
-  color: var(--ink);
-  margin-bottom: 0.5rem;
-}
-
-.type-subhead {
-  font-family: var(--ds);
-  font-size: 1.4rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--mid);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.type-body-text {
-  font-family: var(--sn);
-  font-weight: 200;
-  font-size: 0.85rem;
-  line-height: 1.95;
-  color: var(--mid);
-  max-width: 55ch;
-}
-
-.type-ui {
-  font-family: var(--sn);
-  font-weight: 300;
-  font-size: 0.5rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--stone);
-  margin-top: 1.5rem;
-  display: block;
-}
-
-/* Dark type specimen */
-.type-specimen.dark {
-  background: var(--ink);
-  border-color: rgba(92,26,20,0.2);
-}
-.type-specimen.dark::before { background: var(--red); }
-.type-specimen.dark .type-label { color: rgba(92,26,20,0.7); }
-.type-specimen.dark .type-hero { color: var(--cream); }
-.type-specimen.dark .type-subhead { color: rgba(247,242,234,0.4); }
-.type-specimen.dark .type-body-text { color: rgba(247,242,234,0.35); }
-.type-specimen.dark .type-ui { color: rgba(247,242,234,0.2); }
-
-/* ══════════════════════════════════════════════════
-   VI. BRAND ELEMENTS
-   ══════════════════════════════════════════════════ */
-.elements-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.elem-card {
-  border: 1px solid var(--line);
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.elem-label {
-  font-size: 0.42rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--stone);
-}
-
-/* Blood red rule */
-.elem-rule {
-  width: 2px;
-  height: 48px;
-  background: linear-gradient(to bottom, transparent, var(--red), transparent);
-}
-
-/* Corner frame */
-.elem-frame {
-  width: 80px;
-  height: 80px;
-  position: relative;
-  border: 1px solid var(--line);
-}
-.elem-frame .corner { border-color: rgba(92,26,20,0.5); }
-
-/* Divider */
-.elem-divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--red), transparent);
-  opacity: 0.3;
-}
-
-/* ══════════════════════════════════════════════════
-   VII. BUTTONS & UI
-   ══════════════════════════════════════════════════ */
-.btn-row {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin: 1.5rem 0;
-}
-
-.btn {
-  font-family: var(--sn);
-  font-size: 0.48rem;
-  font-weight: 300;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  padding: 0.85rem 2.2rem;
-  cursor: pointer;
-  transition: all 0.3s;
-  border: none;
-}
-
-.btn-primary {
-  background: var(--gold);
-  color: var(--cream);
-  border: 1px solid var(--gold);
-}
-.btn-primary:hover { background: var(--ink); border-color: var(--ink); }
-
-.btn-outline {
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--gold);
-}
-.btn-outline:hover { background: var(--gold); color: var(--cream); }
-
-.btn-gold {
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--gold);
-}
-.btn-gold:hover { background: var(--gold); color: var(--cream); }
-
-.btn-dark {
-  background: var(--ink);
-  color: var(--cream);
-  border: 1px solid var(--ink);
-}
-.btn-dark:hover { background: var(--mid); border-color: var(--mid); }
-
-/* ══════════════════════════════════════════════════
-   VIII. SAMPLE HERO SECTION
-   ══════════════════════════════════════════════════ */
-.sample-hero {
-  min-height: 80vh;
-  background: var(--cream);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4rem 2rem;
-  position: relative;
-  border: 1px solid var(--line);
-  margin: 2rem 0;
-}
-
-.sample-hero::before {
-  content: '';
-  position: absolute;
-  inset: 10px;
-  border: 1px solid rgba(208,196,174,0.2);
-  pointer-events: none;
-}
-
-.sh-over {
-  font-family: var(--ds);
-  font-size: clamp(0.7rem, 1.5vw, 0.95rem);
-  font-weight: 300;
-  letter-spacing: 0.65em;
-  text-transform: uppercase;
-  color: var(--stone);
-  margin-bottom: 0.3rem;
-}
-
-.sh-title {
-  font-family: var(--ds);
-  font-size: clamp(4.5rem, 14vw, 10rem);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 0.85;
-  color: var(--ink);
-}
-
-.sh-rule {
+.hero-rule {
   width: 2px;
   height: 52px;
   background: linear-gradient(to bottom, transparent, var(--red), transparent);
   margin: 2rem auto;
+  opacity: 0;
+  animation: rise 1s ease 0.8s forwards;
 }
 
-.sh-sub {
+.hero-sub {
   font-family: var(--ds);
   font-size: clamp(0.85rem, 1.8vw, 1.1rem);
   font-weight: 300;
   font-style: italic;
   color: var(--mid);
   line-height: 1.9;
-  max-width: 36ch;
+  max-width: 38ch;
+  opacity: 0;
+  animation: rise 1s ease 1s forwards;
 }
 
-.sh-cta {
+.hero-cta {
   margin-top: 2.5rem;
-  font-family: var(--sn);
-  font-size: 0.5rem;
+  display: inline-block;
+  font-size: 0.52rem;
   font-weight: 300;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  padding: 0.85rem 2.5rem;
-  border: 1px solid var(--gold);
-  background: transparent;
   color: var(--gold);
-  cursor: pointer;
+  border: 1px solid var(--gold);
+  padding: 0.9rem 2.5rem;
   transition: all 0.3s;
+  opacity: 0;
+  animation: rise 1s ease 1.2s forwards;
 }
-.sh-cta:hover { background: var(--gold); color: var(--cream); }
-
-/* Dark hero variant */
-.sample-hero.dark {
-  background: var(--ink);
-  border-color: rgba(92,26,20,0.15);
+.hero-cta:hover {
+  background: var(--gold);
+  color: var(--cream);
 }
-.sample-hero.dark::before { border-color: rgba(92,26,20,0.1); }
-.sample-hero.dark .corner { border-color: rgba(92,26,20,0.4); }
-.sample-hero.dark .sh-over { color: rgba(140,114,72,0.4); }
-.sample-hero.dark .sh-title { color: var(--cream); }
-.sample-hero.dark .sh-sub { color: rgba(247,242,234,0.4); }
 
-/* ══════════════════════════════════════════════════
-   IX. SAMPLE CARDS
-   ══════════════════════════════════════════════════ */
-.card-grid {
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: rise 1s ease 1.5s forwards;
+}
+.hero-scroll-line {
+  width: 1px; height: 28px;
+  background: linear-gradient(to bottom, var(--stone), transparent);
+  margin: 0 auto;
+  opacity: 0.3;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes rise { to { opacity:1; transform:none; } }
+@keyframes pulse { 0%,100%{opacity:0.15} 50%{opacity:0.5} }
+
+/* ── SHARED ── */
+.section-label {
+  font-size: 0.48rem;
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.section-title {
+  font-family: var(--ds);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.section-text {
+  font-family: var(--ds);
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.9;
+  color: var(--mid);
+  max-width: 52ch;
+}
+
+.divider {
+  width: 1px;
+  height: 64px;
+  background: linear-gradient(to bottom, transparent, var(--red), transparent);
+  margin: 0 auto;
+  opacity: 0.4;
+}
+
+/* Reveal on scroll */
+.rv { opacity:0; transform:translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.rv.vis { opacity:1; transform:none; }
+.rv2 { transition-delay: 0.1s; }
+.rv3 { transition-delay: 0.2s; }
+.rv4 { transition-delay: 0.3s; }
+
+/* ══════════════════════════════════════
+   SHOP / CATEGORIES
+   ══════════════════════════════════════ */
+#shop {
+  padding: 6rem 2.5rem 4rem;
+}
+
+.shop-head {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.shop-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  margin: 2rem 0;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.product-card {
-  border: 1px solid var(--line);
-  overflow: hidden;
-  transition: border-color 0.3s;
-  cursor: pointer;
-}
-.product-card:hover { border-color: var(--red); }
-
-.pc-img {
+.shop-card {
+  position: relative;
   aspect-ratio: 3/4;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--cream2);
+  border: 1px solid var(--line);
+  transition: border-color 0.3s;
+}
+.shop-card:hover { border-color: var(--red); }
+
+.shop-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.shop-card:hover .shop-card-img { transform: scale(1.04); }
+
+/* Placeholder pattern for cards without images */
+.shop-card-placeholder {
+  width: 100%;
+  height: 100%;
   background: var(--cream2);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.pc-img::before {
+
+.shop-card-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 20%;
+  border: 1px solid var(--line);
+  opacity: 0.5;
+}
+
+.shop-card-placeholder svg {
+  width: 40px;
+  height: 40px;
+  opacity: 0.2;
+}
+
+.shop-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(32,28,20,0.7), transparent);
+}
+
+.shop-card-cat {
+  font-size: 0.44rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(247,242,234,0.6);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.shop-card-name {
+  font-family: var(--ds);
+  font-size: 1.15rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--cream);
+}
+
+/* ══════════════════════════════════════
+   ABOUT
+   ══════════════════════════════════════ */
+#about {
+  padding: 6rem 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  max-width: 1000px;
+  align-items: center;
+}
+
+.about-img-wrap {
+  aspect-ratio: 3/4;
+  background: var(--cream2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-img-wrap::before {
   content: '';
   position: absolute;
   inset: 12px;
   border: 1px solid rgba(208,196,174,0.3);
 }
 
-.pc-body { padding: 1.2rem; }
+.about-text { }
 
-.pc-cat {
-  font-size: 0.4rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 0.4rem;
+.about-text .section-text { margin-top: 1rem; }
+
+.about-sig {
+  margin-top: 2rem;
+  font-family: var(--ds);
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ink);
 }
 
-.pc-name {
+.about-role {
+  font-size: 0.48rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-top: 0.3rem;
+}
+
+/* ══════════════════════════════════════
+   PHILOSOPHY STRIP
+   ══════════════════════════════════════ */
+#philosophy {
+  padding: 5rem 2.5rem;
+  background: var(--cream2);
+  text-align: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+#philosophy .section-label { color: var(--gold); }
+#philosophy .section-title { color: var(--ink); }
+
+.phil-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 900px;
+  margin: 3rem auto 0;
+}
+
+.phil-item h3 {
   font-family: var(--ds);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 300;
   font-style: italic;
   color: var(--ink);
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
-.pc-price {
+.phil-item p {
   font-size: 0.75rem;
-  font-weight: 300;
+  font-weight: 200;
+  line-height: 1.8;
   color: var(--mid);
 }
 
-.pc-line {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(to right, var(--red), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
-  margin-top: 0.8rem;
+/* ══════════════════════════════════════
+   CONTACT
+   ══════════════════════════════════════ */
+#contact {
+  padding: 6rem 2.5rem;
+  text-align: center;
 }
-.product-card:hover .pc-line { opacity: 0.3; }
 
-/* ══════════════════════════════════════════════════
+.contact-inner {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--sn);
+  font-size: 0.8rem;
+  font-weight: 200;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--gold);
+}
+
+.contact-form textarea { min-height: 120px; resize: vertical; }
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--stone);
+  font-weight: 200;
+}
+
+.contact-btn {
+  font-family: var(--sn);
+  font-size: 0.52rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.5rem;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 0.3s;
+  align-self: flex-start;
+}
+.contact-btn:hover {
+  background: var(--gold);
+  color: var(--cream);
+}
+
+.contact-details {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.contact-detail-label {
+  font-size: 0.44rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--stone);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.contact-detail-val {
+  font-family: var(--ds);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--ink);
+}
+.contact-detail-val a { border-bottom: 1px solid var(--line); transition: border-color 0.2s; }
+.contact-detail-val a:hover { border-color: var(--gold); }
+
+/* ══════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════ */
+.footer {
+  padding: 2rem 2.5rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  font-family: var(--ds);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--stone);
+}
+
+.footer-right {
+  font-size: 0.44rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a {
+  font-size: 0.44rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--stone);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--ink); }
+
+/* ══════════════════════════════════════
    RESPONSIVE
-   ══════════════════════════════════════════════════ */
+   ══════════════════════════════════════ */
 @media (max-width: 768px) {
-  .wm-meta { grid-template-columns: repeat(2, 1fr); }
-  .logo-grid { grid-template-columns: repeat(2, 1fr); }
-  .palette-grid { grid-template-columns: repeat(2, 1fr); }
-  .palette-sig { grid-template-columns: 1fr; }
-  .elements-grid { grid-template-columns: 1fr; }
-  .card-grid { grid-template-columns: 1fr; }
-  .btn-row { flex-direction: column; }
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 56px; left: 0; right: 0; bottom: 0;
+    background: var(--cream);
+    padding: 3rem;
+    gap: 1.5rem;
+    z-index: 99;
+  }
+  .nav-links.open a { font-size: 0.7rem; }
+
+  .shop-grid { grid-template-columns: 1fr 1fr; }
+  .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .phil-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .contact-details { flex-direction: column; gap: 1.5rem; }
+  .footer { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .shop-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: clamp(3.5rem, 18vw, 6rem); }
 }
 
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════
-     I. COVER
-     ═══════════════════════════════════ -->
-<section class="cover">
-  <div class="cov-frame">
-    <div class="corner tl"></div>
-    <div class="corner tr"></div>
-    <div class="corner bl"></div>
-    <div class="corner br"></div>
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <span class="nav-mm">MM</span>
+    <div class="nav-rule"></div>
+    <span class="nav-wordmark">Maison Maçon</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
   </div>
-  <span class="cov-over">Brand Identity System</span>
-  <span class="cov-maison">Maison</span>
-  <span class="cov-macon">Ma&ccedil;on</span>
-  <div class="cov-red-rule"></div>
-  <div class="cov-sub">
-    Construction de la vie de luxe<br>
-    European Antiques &middot; Paris
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-logo">
+    <span class="hero-mm">MM</span>
   </div>
-  <div class="cov-foot">
-    <span>Est. 2026</span>
-    <span>60 rue Fran&ccedil;ois 1er, 75008 Paris</span>
-    <span>SASU &middot; RCS Paris</span>
+  <span class="hero-overline">Maison</span>
+  <h1 class="hero-title">Maçon</h1>
+  <div class="hero-rule"></div>
+  <p class="hero-sub">European antiques sourced from châteaux,<br>delivered to you worldwide.</p>
+  <a href="#shop" class="hero-cta">Explore the Collection</a>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
   </div>
 </section>
 
-<div class="brand-section">
+<div class="divider"></div>
 
-<!-- ═══════════════════════════════════
-     II. WORDMARK
-     ═══════════════════════════════════ -->
-<div class="section-h">I. Wordmark</div>
-<p class="section-note">The primary logo is a typographic wordmark. "Maison" in spaced capitals, "Ma&ccedil;on" in large italic — always separated by the blood red rule.</p>
+<!-- ── SHOP ── -->
+<section id="shop">
+  <div class="shop-head">
+    <span class="section-label rv">The Collection</span>
+    <h2 class="section-title rv rv2">Objets Trouvés, Pièces Singulières</h2>
+    <p class="section-text rv rv3" style="margin: 0.5rem auto 0; text-align:center;">Each piece hand-selected from estates, brocantes, and private collections across France, Italy, and Spain.</p>
+  </div>
 
-<div class="wm-hero">
-  <span class="wm-small">Maison</span>
-  <span class="wm-large">Ma&ccedil;on</span>
-</div>
+  <div class="shop-grid">
 
-<div class="wm-meta">
-  <div class="wm-meta-item">
-    <span class="wm-meta-l">Typeface</span>
-    <span class="wm-meta-v">Cormorant Garamond</span>
-  </div>
-  <div class="wm-meta-item">
-    <span class="wm-meta-l">Weight</span>
-    <span class="wm-meta-v">Light 300, Italic</span>
-  </div>
-  <div class="wm-meta-item">
-    <span class="wm-meta-l">Signature Mark</span>
-    <span class="wm-meta-v">Blood red vertical rule</span>
-  </div>
-  <div class="wm-meta-item">
-    <span class="wm-meta-l">Secondary</span>
-    <span class="wm-meta-v">Jost Extra-Light</span>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     III. LOGO VARIATIONS
-     ═══════════════════════════════════ -->
-<div class="section-h">II. Logo Variations</div>
-<p class="section-note">The wordmark adapts across backgrounds. The blood red rule is always present — it is the brand's signature mark, its heartbeat.</p>
-
-<div class="logo-grid">
-  <div class="logo-cell on-cream">
-    <span class="lc-over">Maison</span>
-    <div class="lc-rule"></div>
-    <span class="lc-main">Ma&ccedil;on</span>
-  </div>
-  <div class="logo-cell on-cream2">
-    <span class="lc-over">Maison</span>
-    <div class="lc-rule"></div>
-    <span class="lc-main">Ma&ccedil;on</span>
-  </div>
-  <div class="logo-cell on-ink">
-    <span class="lc-over">Maison</span>
-    <div class="lc-rule"></div>
-    <span class="lc-main">Ma&ccedil;on</span>
-  </div>
-  <div class="logo-cell on-forest">
-    <span class="lc-over">Maison</span>
-    <div class="lc-rule"></div>
-    <span class="lc-main">Ma&ccedil;on</span>
-  </div>
-  <div class="logo-cell on-cream3">
-    <span class="lc-over">Maison</span>
-    <div class="lc-rule"></div>
-    <span class="lc-main">Ma&ccedil;on</span>
-  </div>
-  <div class="logo-cell on-gold">
-    <span class="lc-over">Maison</span>
-    <div class="lc-rule"></div>
-    <span class="lc-main">Ma&ccedil;on</span>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     IV. COLOUR PALETTE
-     ═══════════════════════════════════ -->
-<div class="section-h">III. Colour Palette</div>
-<p class="section-note">Cream and ink do the heavy lifting. Gold anchors the luxury. Blood red appears only as a whisper — the vertical rule, a subtle accent, a moment of warmth.</p>
-<div class="palette-grid">
-  <div class="pal-card" style="background:#F7F2EA;color:#201C14"><span class="pal-name">Cream</span><span class="pal-hex">#F7F2EA</span></div>
-  <div class="pal-card" style="background:#EFE8D8;color:#201C14"><span class="pal-name">Linen</span><span class="pal-hex">#EFE8D8</span></div>
-  <div class="pal-card" style="background:#8C7248;color:#F7F2EA"><span class="pal-name">Aged Gold</span><span class="pal-hex">#8C7248</span></div>
-  <div class="pal-card" style="background:#A88E60;color:#F7F2EA"><span class="pal-name">Gold Light</span><span class="pal-hex">#A88E60</span></div>
-  <div class="pal-card" style="background:#A09080;color:#F7F2EA"><span class="pal-name">Stone</span><span class="pal-hex">#A09080</span></div>
-  <div class="pal-card" style="background:#6E6050;color:#F7F2EA"><span class="pal-name">Mid</span><span class="pal-hex">#6E6050</span></div>
-  <div class="pal-card" style="background:#1A2A1C;color:#F7F2EA"><span class="pal-name">Forest</span><span class="pal-hex">#1A2A1C</span></div>
-  <div class="pal-card" style="background:#201C14;color:#F7F2EA"><span class="pal-name">Ink</span><span class="pal-hex">#201C14</span></div>
-</div>
-
-<!-- ═══════════════════════════════════
-     V. TYPOGRAPHY
-     ═══════════════════════════════════ -->
-<div class="section-h">IV. Typography</div>
-<p class="section-note">Two typefaces, used with discipline. Cormorant Garamond for anything with soul — headlines, descriptions, prices. Jost for structure — labels, navigation, buttons.</p>
-
-<div class="type-specimen">
-  <span class="type-label">Light &mdash; Cormorant Garamond 300 Italic</span>
-  <div class="type-hero">Resting in the patina<br>of a century.</div>
-  <div class="type-subhead">Each object carries the warmth of the hands that shaped it, the rooms that held it, the light that aged it.</div>
-  <div class="type-body-text">Napoleon III fauteuil in carved and gilded beechwood, upholstered in its original deep green velvet. Minor wear consistent with age. Sourced from a private estate near Avignon, Provence.</div>
-  <span class="type-ui">Jost 300 &middot; Navigation &middot; Labels &middot; Buttons</span>
-</div>
-
-
-<!-- ═══════════════════════════════════
-     VI. BRAND ELEMENTS
-     ═══════════════════════════════════ -->
-<div class="section-h">V. Signature Elements</div>
-<p class="section-note">Three recurring marks that make the brand instantly recognisable, even at a glance.</p>
-
-<div class="elements-grid">
-  <div class="elem-card">
-    <span class="elem-label">The Blood Red Rule</span>
-    <div class="elem-rule"></div>
-    <span style="font-size:0.65rem;color:var(--mid);font-style:italic;font-family:var(--ds)">Vertical. Always gradient-faded.<br>Separates, punctuates, signals.</span>
-  </div>
-  <div class="elem-card">
-    <span class="elem-label">The Estate Frame</span>
-    <div class="elem-frame">
-      <div class="corner tl"></div>
-      <div class="corner tr"></div>
-      <div class="corner bl"></div>
-      <div class="corner br"></div>
+    <div class="shop-card rv">
+      <div class="shop-card-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="8" width="18" height="12" rx="1"/><path d="M7 8V6a5 5 0 0110 0v2"/></svg>
+      </div>
+      <div class="shop-card-overlay">
+        <span class="shop-card-cat">Sièges</span>
+        <span class="shop-card-name">Fauteuils &amp; Bergères</span>
+      </div>
     </div>
-    <span style="font-size:0.65rem;color:var(--mid);font-style:italic;font-family:var(--ds)">Survey-border corners.<br>Frames the world within.</span>
+
+    <div class="shop-card rv rv2">
+      <div class="shop-card-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="18" rx="1"/><circle cx="12" cy="12" r="4"/></svg>
+      </div>
+      <div class="shop-card-overlay">
+        <span class="shop-card-cat">Miroirs &amp; Cadres</span>
+        <span class="shop-card-name">Gilt Mirrors</span>
+      </div>
+    </div>
+
+    <div class="shop-card rv rv3">
+      <div class="shop-card-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M4 20h16M6 16h12M8 12h8"/><circle cx="12" cy="7" r="3"/></svg>
+      </div>
+      <div class="shop-card-overlay">
+        <span class="shop-card-cat">Consoles</span>
+        <span class="shop-card-name">Marble &amp; Stone</span>
+      </div>
+    </div>
+
+    <div class="shop-card rv">
+      <div class="shop-card-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="8"/><path d="M12 4v4M12 16v4M4 12h4M16 12h4"/></svg>
+      </div>
+      <div class="shop-card-overlay">
+        <span class="shop-card-cat">Bronze &amp; Ormolu</span>
+        <span class="shop-card-name">Decorative Objects</span>
+      </div>
+    </div>
+
+    <div class="shop-card rv rv2">
+      <div class="shop-card-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 15l5-5 4 4 4-6 5 7"/></svg>
+      </div>
+      <div class="shop-card-overlay">
+        <span class="shop-card-cat">Peintures</span>
+        <span class="shop-card-name">Oil Paintings</span>
+      </div>
+    </div>
+
+    <div class="shop-card rv rv3">
+      <div class="shop-card-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="shop-card-overlay">
+        <span class="shop-card-cat">Bijoux</span>
+        <span class="shop-card-name">Vintage Jewellery</span>
+      </div>
+    </div>
+
   </div>
-  <div class="elem-card">
-    <span class="elem-label">The Red Divider</span>
-    <div class="elem-divider"></div>
-    <span style="font-size:0.65rem;color:var(--mid);font-style:italic;font-family:var(--ds)">Horizontal. Centre-faded.<br>Between sections, like a breath.</span>
-  </div>
-</div>
+</section>
 
-<!-- ═══════════════════════════════════
-     VII. BUTTONS
-     ═══════════════════════════════════ -->
-<div class="section-h">VI. Buttons &amp; Interactions</div>
+<div class="divider"></div>
 
-<div class="btn-row">
-  <button class="btn btn-primary">Primary Action</button>
-  <button class="btn btn-outline">Secondary Action</button>
-  <button class="btn btn-gold">Gold Variant</button>
-  <button class="btn btn-dark">Dark Variant</button>
-</div>
-
-<!-- ═══════════════════════════════════
-     VIII. SAMPLE HERO
-     ═══════════════════════════════════ -->
-<div class="section-h">VII. Sample Hero</div>
-
-<div class="sample-hero">
-  <div class="corner tl"></div>
-  <div class="corner tr"></div>
-  <div class="corner bl"></div>
-  <div class="corner br"></div>
-  <span class="sh-over">Maison</span>
-  <h1 class="sh-title">Ma&ccedil;on</h1>
-  <div class="sh-rule"></div>
-  <p class="sh-sub">European antiques sourced from ch&acirc;teaux,<br>delivered to you worldwide.</p>
-  <button class="sh-cta">Explore the Collection</button>
-</div>
-
-<!-- ═══════════════════════════════════
-     X. PRODUCT CARDS
-     ═══════════════════════════════════ -->
-<div class="section-h">IX. Product Cards</div>
-<p class="section-note">Red accents appear on hover — the category label, the bottom line. Subtle but unmistakable.</p>
-
-<div class="card-grid">
-  <div class="product-card">
-    <div class="pc-img"></div>
-    <div class="pc-body">
-      <span class="pc-cat">Si&egrave;ges</span>
-      <div class="pc-name">Fauteuil Napoleon III,<br>velours vert</div>
-      <div class="pc-price">&euro;1,200</div>
-      <div class="pc-line"></div>
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap rv">
+      <!-- Placeholder for Isabel's photo -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="#A09080" stroke-width="0.5" width="48" height="48" opacity="0.3">
+        <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/>
+      </svg>
+    </div>
+    <div class="about-text">
+      <span class="section-label rv">About</span>
+      <h2 class="section-title rv rv2">Built Piece by Piece</h2>
+      <p class="section-text rv rv3">
+        Maison Maçon was founded on the belief that the most beautiful interiors are not decorated — they are collected. Each piece in our inventory has been sourced personally from estates, flea markets, and private sellers across France, Italy, and Spain.
+      </p>
+      <p class="section-text rv rv4" style="margin-top: 1rem;">
+        We specialise in Napoleon III seating, gilt mirrors, marble consoles, patinated bronze, and antique oil paintings — objects that carry the warmth of centuries and the unmistakable character of European craftsmanship.
+      </p>
+      <div class="rv rv4" style="margin-top:2rem;">
+        <div class="about-sig">Isabel Frasier</div>
+        <div class="about-role">Founder &amp; Curator</div>
+      </div>
     </div>
   </div>
-  <div class="product-card">
-    <div class="pc-img"></div>
-    <div class="pc-body">
-      <span class="pc-cat">Miroirs</span>
-      <div class="pc-name">Miroir chemin&eacute;e dor&eacute;,<br>&eacute;poque Louis XVI</div>
-      <div class="pc-price">&euro;2,800</div>
-      <div class="pc-line"></div>
+</section>
+
+<!-- ── PHILOSOPHY ── -->
+<section id="philosophy">
+  <span class="section-label rv">Our Approach</span>
+  <h2 class="section-title rv rv2">Construction de la Vie de Luxe</h2>
+  <div class="phil-grid">
+    <div class="phil-item rv">
+      <h3>Sourced, Not Manufactured</h3>
+      <p>Every piece is an original, sourced from its place of origin. We never deal in reproductions.</p>
+    </div>
+    <div class="phil-item rv rv2">
+      <h3>Pan-European Provenance</h3>
+      <p>From the brocantes of Provence to the palazzi of Tuscany — we source where the treasures are.</p>
+    </div>
+    <div class="phil-item rv rv3">
+      <h3>Delivered Worldwide</h3>
+      <p>White-glove shipping to the United Kingdom, United States, Japan, and across Europe.</p>
     </div>
   </div>
-  <div class="product-card">
-    <div class="pc-img"></div>
-    <div class="pc-body">
-      <span class="pc-cat">Bronze</span>
-      <div class="pc-name">Cand&eacute;labre ormolu,<br>cinq bras</div>
-      <div class="pc-price">&euro;950</div>
-      <div class="pc-line"></div>
+</section>
+
+<div class="divider" style="background: linear-gradient(to bottom, transparent, var(--line), transparent);"></div>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="contact-inner">
+    <span class="section-label rv">Get in Touch</span>
+    <h2 class="section-title rv rv2">Enquiries &amp; Commissions</h2>
+    <p class="section-text rv rv3" style="margin: 0 auto;">Looking for a specific piece? Have a question about an item? We would love to hear from you.</p>
+
+    <form class="contact-form rv rv4" action="mailto:hello@maisonmacon.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" placeholder="Your message" required></textarea>
+      <button type="submit" class="contact-btn">Send Message</button>
+    </form>
+
+    <div class="contact-details rv">
+      <div>
+        <span class="contact-detail-label">Email</span>
+        <span class="contact-detail-val"><a href="mailto:hello@maisonmacon.com">hello@maisonmacon.com</a></span>
+      </div>
+      <div>
+        <span class="contact-detail-label">Based in</span>
+        <span class="contact-detail-val">Paris, France</span>
+      </div>
+      <div>
+        <span class="contact-detail-label">Shipping</span>
+        <span class="contact-detail-val">Worldwide</span>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<div style="height:4rem"></div>
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-left">Maison Maçon</div>
+  <div class="footer-links">
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-right">&copy; 2026 Maison Maçon SASU &middot; Paris</div>
+</footer>
 
-</div><!-- /brand-section -->
+<!-- ── SCROLL REVEAL ── -->
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); }});
+}, { threshold: 0.15 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+
 </body>
 </html>
